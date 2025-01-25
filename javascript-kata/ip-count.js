@@ -1,7 +1,6 @@
+//Count IP Addresses - https://www.codewars.com/kata/526989a41034285187000de4/python
 // Implement a function that receives two IPv4 addresses, and returns the number of addresses between them(including the first one, excluding the last one).
 // All inputs will be valid IPv4 addresses in the form of strings.The last address will always be greater than the first one.
-
-
 
 function ipsBetween(start, end) {
     let multiplierA = 24, multiplierB = 24;
@@ -15,7 +14,6 @@ function ipsBetween(start, end) {
 
     const ip2 = end.split(".").map(num => {
         parseInt(num, 10)
-
         num = num * (2 ** multiplierB);
         multiplierB = multiplierB - 8;
         return num
