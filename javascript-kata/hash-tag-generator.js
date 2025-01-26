@@ -1,5 +1,6 @@
-// The marketing team is spending way too much time typing in hashtags.
-//     Let's help them with our own Hashtag Generator!
+//  The Hashtag Generator - https://www.codewars.com/kata/52449b062fb80683ec000024
+//  The marketing team is spending way too much time typing in hashtags.
+//  Let's help them with our own Hashtag Generator!
 
 // Here's the deal:
 

@@ -1,4 +1,8 @@
 /**
+    Array Helpers - https://www.codewars.com/kata/525d50d2037b7acd6e000534     
+
+    This kata is designed to test your ability to extend the functionality of built-in classes. In this case, we want you to extend the built-in Array class with the following methods: square(), cube(), average(), sum(), even() and odd().
+
     Explanation:
 
     * square() must return a copy of the array, containing all values squared
@@ -16,7 +20,7 @@
  */
 
 
-    
+
 Array.prototype.square = function () {
     return this.map(val => val ** 2);
 }
