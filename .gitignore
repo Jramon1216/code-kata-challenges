@@ -1,2 +1,7 @@
 python-kata/venv/*
 .venv/*
+python-kata/include/*
+python-kata/Lib/*
+python-kata/Scripts/*
+python-kata/Scripts/*
+pyvenv.cfg
