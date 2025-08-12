@@ -5,3 +5,6 @@ python-kata/Lib/*
 python-kata/Scripts/*
 python-kata/Scripts/*
 pyvenv.cfg
+c-sharp-kata/bin/*
+c-sharp-kata/obj/*
+*.sln
