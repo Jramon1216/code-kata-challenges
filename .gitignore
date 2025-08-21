@@ -7,4 +7,5 @@ python-kata/Scripts/*
 pyvenv.cfg
 c-sharp-kata/bin/*
 c-sharp-kata/obj/*
+c-sharp-kata/Program.cs
 *.sln
