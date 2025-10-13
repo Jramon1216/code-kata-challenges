@@ -23,22 +23,18 @@ public class KataUser
 
     }
 
-    public void RankChecker() {
+    public void IncProgress(int actRank)
+    {
+        int n = rank - 1;
+
         // if rank < -8 or rank > 8 then ERROR
         if (rank < minRank || rank > maxRank)
         {
-            throw new Exception("ERROR: Rank value out of bounds.");
-        } 
-    }
+            throw new ArgumentException("ERROR: Rank value out of bounds.");
+        }
 
-    public void IncProgress(int actRank)
-    {
-
-        // when progress == 100 then rank++
-        // if progress > 100 then progress =  progress - 100
-        if (progress >= 100)
+        if (progress == 100)
         {
-            progress += progress - 100;
             rank++;
         }
 
@@ -48,12 +44,12 @@ public class KataUser
             progress += 3;
         }
         // when actRank == rank-- then progress++
-        else if (actRank == rank--)
+        else if (actRank == n)
         {
             progress++;
         }
         // when actRank < rank-- then continue
-        else if (actRank < rank--)
+        else if (actRank < n)
         {
             return;
         }
@@ -62,9 +58,20 @@ public class KataUser
         {
             progress += 10 * (actRank - rank) * (actRank - rank);
         }
-        
-        // TODO: Explore modularizing further for readablility and practice
 
+        if (progress > 100)
+        {
+            while (progress > 100)
+            {
+                progress -= 100;
+                rank++;
+            }
+        }
+        
+        if (rank == 0)
+        {
+            rank++;
+        }
 
     }
 }
