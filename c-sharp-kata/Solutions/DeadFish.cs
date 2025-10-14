@@ -5,7 +5,30 @@ public class DeadFish
   public static int[] Parse(string data)
   {
     Char[] letters = data.ToCharArray();
-    int[] res = [];
+    List<int> res = [];
+    int value = 0;
+
+    foreach (char letter in letters)
+    {
+      switch (letter)
+      {
+        case 'i':
+          value++;
+          break;
+        case 'd':
+          value--;
+          break;
+        case 's':
+          value *= value;
+          break;
+        case 'o':
+          res.Add(value);
+          break;
+        default:
+          continue;
+      }
+    }
+        
     // iterate through each letter
     // with switch case
     /*
@@ -15,6 +38,6 @@ public class DeadFish
     o: Output(Add) the value to a result array 
     */
 
-    return []; // placeholder return 
+    return [..res]; // placeholder return 
   }
 }
