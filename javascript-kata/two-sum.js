@@ -8,22 +8,29 @@
     The input will always be valid (numbers will be an array of length 2 or greater, and all of the items will be numbers; target will always be the sum of two different items from that array).
 */
 
-
-// Hash map approach - O(n) time, O(n) space
 function twoSum(numbers, target) {
-    const map = new Map();
-    
     for (let i = 0; i < numbers.length; i++) {
-        const complement = target - numbers[i];
-        
-        if (map.has(complement)) {
-            return [map.get(complement), i];
+        for (let n = i + 1; n < numbers.length; n++) {
+            if (numbers[i] + numbers[n] === target) {
+                return [i, n]
+            }
         }
-        
-        map.set(numbers[i], i);
     }
-    
-    return null; // No solution found
+}
+function twoSum2(numbers, target) {
+    const arr = numbers.sort((a, b) => a - b);
+    console.log(arr)
+    let left = 0, right = arr.length - 1;
+    while (left < right) {
+        let sum = arr[left] + arr[right];
+        if (sum === target) {
+            return [left, right];
+        } else if (sum < target) {
+            left++;
+        } else {
+            right--;
+        }
+    }
 }
 
 console.log(twoSum([2, 3, 1], 3))
