@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  code-kata-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: code-kata-workspace
+    volumes:
+      - .:/workspace
+      - node_modules:/workspace/node_modules
+    ports:
+      - "8888:8888"  # Jupyter
+      - "3000:3000"  # Node.js applications
+      - "5000:5000"  # ASP.NET applications
+    environment:
+      - NODE_ENV=development
+      - PYTHONUNBUFFERED=1
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: code-kata-jupyter
+    volumes:
+      - .:/workspace
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    working_dir: /workspace
+    command: jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+
+volumes:
+  node_modules:
