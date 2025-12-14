@@ -8,7 +8,7 @@ namespace c_sharp_kata.Solutions;
       The order of elements in the first list should be preserved in the result. 
     */
 
-public class ArrayDiff
+public class ArrayDiffSolution
 {
   public static int[] performDiff(int[] a, int[] b)
   {

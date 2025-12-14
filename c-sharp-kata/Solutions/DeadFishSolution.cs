@@ -1,6 +1,6 @@
 namespace c_sharp_kata.Solutions;
 
-public class DeadFish 
+public class DeadFishSolution 
 {
   public static int[] Parse(string data)
   {

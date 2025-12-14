@@ -1,7 +1,3 @@
-using System.Diagnostics.Contracts;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-
 namespace c_sharp_kata.Solutions;
 
 /*
