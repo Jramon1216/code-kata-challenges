@@ -1,5 +1,5 @@
-using System;
-
+using System.Collections.Generic;
+using System.Diagnostics;
 namespace c_sharp_kata.Solutions;
 
 /*
@@ -24,21 +24,57 @@ namespace c_sharp_kata.Solutions;
 
 public class GetLengthOfMissingArraySolution
 {
-    public static void  GetLengthOfMissingArray(object[][] arrayOfArrays)
+    public static int GetLengthOfMissingArray(object[][] arrayOfArrays)
     {
         /*
             - sort the arrays by length
             - have a counter equal to the array with the lowest length (first array in list)
             - if the length of the current list is not equal to the counter then return the counter
         */
+
+        if(arrayOfArrays == null || arrayOfArrays.Length == 0) return 0;
+
         List<int> lengths = [];
 
-        foreach(var array in arrayOfArrays)
+        foreach (object[] array in arrayOfArrays)
         {
-            lengths.Add(array.Length());
+            if (array == null || array.Length == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                lengths.Add(array.Length);
+            }
+        }
+        
+        lengths.Sort();
+        int counter = lengths[0];
+
+        foreach(var l in lengths)
+        {
+            if(l != counter)
+            {
+                return counter;
+            } 
+            else
+            {
+                counter++;
+            }
         }
 
-        // TODO: sort lengths list
+        return 0;
+    }
 
+    public static int GetLengthOfMissingArray2(object[][] arrayOfArrays)
+    {
+        /*
+            ? What's the minimum length?
+            ? What's the minimum length?
+            ? How many arrays do you have?
+            ? If the lengths were consecutive with nothing missing, how many arrays should you have?
+            
+            * That difference should tell you what's mising
+        */
     }
 }
