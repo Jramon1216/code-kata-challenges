@@ -12,7 +12,7 @@ services:
     ports:
       - "8888:8888"  # Jupyter
       - "3000:3000"  # Node.js applications
-      - "5000:5000"  # ASP.NET applications
+      - "5001:5000"  # ASP.NET applications
     environment:
       - NODE_ENV=development
       - PYTHONUNBUFFERED=1
