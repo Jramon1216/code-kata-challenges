@@ -42,7 +42,7 @@ RUN npm install
 RUN dotnet restore c-sharp-kata/c-sharp-kata.csproj
 
 # Expose ports for different services
-EXPOSE 8888 3000 5000
+EXPOSE 8888 3000 5001
 
 # Default command
 CMD ["/bin/bash"]
