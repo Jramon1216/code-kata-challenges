@@ -7,5 +7,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
+    <StartupObject>c_sharp_kata.Program</StartupObject>
   </PropertyGroup>
 </Project>
