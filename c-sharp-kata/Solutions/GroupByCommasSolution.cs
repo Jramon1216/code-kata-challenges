@@ -15,7 +15,7 @@ namespace c_sharp_kata.Solutions;
         35235235  ->  "35,235,235"
 */
 
-public class GroupByColumnsSolution()
+public class GroupByCommasSolution()
 {
     public static string GroupByCommas(int n)
     {
