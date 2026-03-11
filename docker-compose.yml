@@ -1,13 +1,13 @@
 version: '3.9'
 
 services:
-  code-kata-dev:
+  workspace:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: code-kata-workspace
     volumes:
-      - .:/workspace
+      - /Users/jon/Code/Repos/code-kata-challenges:/workspace
       - node_modules:/workspace/node_modules
     ports:
       - "8888:8888"  # Jupyter
@@ -20,20 +20,6 @@ services:
     stdin_open: true
     tty: true
     command: /bin/bash
-
-  jupyter:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: code-kata-jupyter
-    volumes:
-      - .:/workspace
-    ports:
-      - "8888:8888"
-    environment:
-      - JUPYTER_ENABLE_LAB=yes
-    working_dir: /workspace
-    command: jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
 
 volumes:
   node_modules:

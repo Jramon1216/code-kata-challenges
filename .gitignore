@@ -32,6 +32,7 @@ typescript-kata/dist/
 .idea/
 *.swp
 .DS_Store
+.devcontainer/
 
 # Replit
 .replit
