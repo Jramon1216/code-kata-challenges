@@ -44,5 +44,10 @@ RUN dotnet restore c-sharp-kata/c-sharp-kata.csproj
 # Expose ports for different services
 EXPOSE 8888 3000 5001
 
+# Installs bash-completion package
+RUN apt-get update
+
+RUN apt-get install bash-completion
+
 # Default command
 CMD ["/bin/bash"]
