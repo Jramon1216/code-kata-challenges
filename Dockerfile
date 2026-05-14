@@ -1,7 +1,7 @@
 # Multi-language development environment
 # Supports: Node.js (JavaScript/TypeScript), Python, and .NET (C#)
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS base
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS base
 
 # Install Node.js and npm
 RUN apt-get update && apt-get install -y \
