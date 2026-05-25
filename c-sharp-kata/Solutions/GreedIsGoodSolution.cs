@@ -27,16 +27,12 @@ using System.Collections.Generic;
 
 public class GreedIsGoodSolution
 {
-    public static int Score(int[] dice)
+    public static object Score(int[] dice)
     {
-        // * Maybe count the occurences of each and use that to get the score
 
-        // TODO: replace GetValue method with TryGetValue method
-        // * Figure out what happens to the remaning values if one or five is greater than three
-        // * if a value is greater than 3 then subtract 3 from value and add remaming score
+        int finalScore = 0;
 
-
-        Dictionary<int, int> cache = new()
+        Dictionary<int, int> occurrences = new()
         {
             {1,0},
             {2,0},
@@ -48,14 +44,59 @@ public class GreedIsGoodSolution
 
         foreach(int number in dice)
         {
-            if (dice.Contains(number))
+            occurrences.TryGetValue(number, out int value);
+            value++;
+            occurrences[number] = value;
+
+            switch (number)
             {
-                int value = 0;
-                dice.GetValue(number, value);
-                value++;
+                case 1:
+                    finalScore += 100;
+
+                    if(occurrences[number] == 3)
+                    {
+                        finalScore -= 300;
+                        finalScore += 1000;
+                    }
+                    break;
+                case 2:
+                    if (occurrences[number] == 3)
+                    {
+                        finalScore += 200;
+                    }
+                    break;
+                case 3:
+                if (occurrences[number] == 3)
+                    {
+                       finalScore += 300; 
+                    }
+                    break;
+                case 4:
+                if (occurrences[number] == 3)
+                {
+                    finalScore += 400;
+                }
+                    break;
+                case 5:
+                finalScore += 50;
+
+                if (occurrences[number] == 3)
+                {
+                    finalScore -= 150;
+                    finalScore += 500;
+                }
+                    break;
+                case 6:
+                if (occurrences[number] == 3)
+                {
+                    finalScore += 600;
+                }
+                    break;
+                default:
+                    break;
             }
         }
 
-        return 0;
-    }
-}
+        return finalScore;
+            }
+        }
