@@ -27,9 +27,13 @@ using System.Collections.Generic;
 
 public class GreedIsGoodSolution
 {
-    public static object Score(int[] dice)
+    public static object Score(int[] dice) // First attempt 
     {
 
+        //  TODO: Create a private list for triple values then replace numbers in switch case with list indexes
+
+        // * Try caching occurences then using LINQ to filter out zeros then iterate 
+        // * through each occurence after filtering out zeros
         int finalScore = 0;
 
         Dictionary<int, int> occurrences = new()
