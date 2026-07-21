@@ -75,6 +75,7 @@ class IPv4Address:
 
 
         elif type(ipv4) == str: # if a string is passed in, ensure it's a proper ipv4 address
+            # TODO: Change regex to ensure that the first octet cannot be zero
             match = re.fullmatch("^(?:(?:25[0-5]|2[0-4]\\d|1?\\d{1,2})(?:\\.(?!$)|$)){4}$", ipv4) is not None
             if not match:
                 raise ValueError('Invalid IPV4 address')
