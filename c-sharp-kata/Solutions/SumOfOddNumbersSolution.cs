@@ -47,10 +47,8 @@ public class RowSumOddNumbersSolution
             multiplier += 2;
         }
 
-        //! calculation is wrong, seems to be overshooting. Need to review how sum and num is being added 
-        //TODO: Debug for loop
-        int sum = num;
-        for(int i=0; i < n; i++)
+        long sum = num;
+        for(int i=0; i < n - 1; i++)
         {
             num += 2;
             sum += num;
